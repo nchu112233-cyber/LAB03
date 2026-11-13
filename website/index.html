@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runner Monitoring System</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>RUNNER MONITORING SYSTEM</h1>
+        <p>Hệ thống giám sát và cảnh báo người chạy</p>
+        <span id="connection">MQTT: Đang kết nối...</span>
+    </header>
+
+    <main>
+        <h2>DỮ LIỆU CẢM BIẾN</h2>
+
+        <section class="cards">
+            <div class="card">
+                <h3>Nhiệt độ</h3>
+                <p id="temperature">-- °C</p>
+            </div>
+
+            <div class="card">
+                <h3>Áp suất khí quyển</h3>
+                <p id="pressure">-- hPa</p>
+            </div>
+
+            <div class="card">
+                <h3>Độ cao</h3>
+                <p id="altitude">-- m</p>
+            </div>
+        </section>
+
+        <h2>BIỂU ĐỒ THEO THỜI GIAN THỰC</h2>
+
+        <section class="charts">
+            <div class="chart-card">
+                <h3>Biểu đồ nhiệt độ</h3>
+                <canvas id="tempChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <h3>Biểu đồ độ cao</h3>
+                <canvas id="altChart"></canvas>
+            </div>
+        </section>
+
+        <h2>ĐIỀU KHIỂN THIẾT BỊ</h2>
+
+        <section class="control">
+            <div>
+                <h3>LED cảnh báo</h3>
+                <button onclick="controlDevice('led',1)">LED ON</button>
+                <button class="off" onclick="controlDevice('led',0)">LED OFF</button>
+            </div>
+
+            <div>
+                <h3>Buzzer cảnh báo</h3>
+                <button onclick="controlDevice('buzzer',1)">BUZZER ON</button>
+                <button class="off" onclick="controlDevice('buzzer',0)">BUZZER OFF</button>
+            </div>
+
+            <div>
+                <h3>Chế độ hoạt động</h3>
+                <button class="auto" onclick="setAuto()">AUTO MODE</button>
+            </div>
+        </section>
+
+        <p id="status">Đang chờ dữ liệu cảm biến...</p>
+    </main>
+
+    <footer>
+        Lab 3 - ESP32 - FreeRTOS - MQTT
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

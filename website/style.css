@@ -1,0 +1,182 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    margin: 0;
+    color: #1e293b;
+}
+
+header {
+    background: #173b70;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+#connection {
+    display: inline-block;
+    background: #d1fae5;
+    color: #047857;
+    padding: 8px 18px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 200px;
+    background: white;
+    text-align: center;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px #cbd5e1;
+}
+
+.card p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.chart-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    height: 320px;
+}
+
+.control {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    text-align: center;
+}
+
+.control div {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    min-width: 230px;
+}
+
+button {
+    padding: 12px 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 7px;
+    background: #16a34a;
+    color: white;
+    cursor: pointer;
+}
+
+button.off {
+    background: #dc2626;
+}
+
+button.auto {
+    background: #2563eb;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#status {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+footer {
+    background: #173b70;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+@media (max-width: 700px) {
+    .charts {
+        grid-template-columns: 1fr;
+    }
+}
+.control {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 30px auto;
+}
+
+.control div {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    min-width: 220px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.control button {
+    padding: 12px 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    background: #2196f3;
+    color: white;
+    cursor: pointer;
+}
+
+.control button.off {
+    background: #e53935;
+}
+
+.control button.auto {
+    background: #16a085;
+}
+
+#modeStatus {
+    font-size: 20px;
+    color: #173b65;
+    font-weight: bold;
+}
+
+#modeStatus + button {
+    background: #2563eb;
+    margin-top: 10px;
+}
+
+#modeStatus + button:hover {
+    background: #1d4ed8;
+}
